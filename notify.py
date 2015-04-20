@@ -26,7 +26,7 @@ def post_message(connection, url, success):
   status_text = 'succeeded' if success else 'failed'
   color = 'good' if success else 'danger'
   emoji = ':ok_hand:' if success else ':fire:'
-  text = '<%s|Build #%s> %s for project %s on branch %s' % (build_url, build_number, status_text, project, branch)
+  text = '<%s|Build #%s> %s for project *%s* on branch *%s*' % (build_url, build_number, status_text, project, branch)
 
   message = {
     'username': 'Shippable',
