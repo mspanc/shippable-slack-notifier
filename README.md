@@ -10,7 +10,7 @@ Simple Slack notifier for Shippable.
 * Select desired channel for notifications, confirm
 * Copy `/services/ABCDEFGH/IJKLMNOP/12312312312312312321` part of *Webhook URL* information
 * Enable your project in Shippable
-* Go to the org dashboard or individual dashboard page from where you have enabled your project and click on ENCRYPT ENV VARIABLE button on the top right corner of the page. ([http://docs.shippable.com/en/latest/config.html#secure-env-variables](More info...))
+* Go to the org dashboard or individual dashboard page from where you have enabled your project and click on ENCRYPT ENV VARIABLE button on the top right corner of the page. ([More info...](http://docs.shippable.com/en/latest/config.html#secure-env-variables))
 * Enter the following into the text field: `SLACK_URL=/services/ABCDEFGH/IJKLMNOP/12312312312312312321` where `/services/ABCDEFGH/IJKLMNOP/12312312312312312321` was obtained before, click *Encrypt*
 * Copy the encrypted variable code that will appear 
 * Paste it into your `shippable.yml` in your *env* section
