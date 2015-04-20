@@ -17,9 +17,9 @@ Simple Slack notifier for Shippable.
 * Add the following code to your `shippable.yml`:
     ```
     after_failure:
-      - wgetpython ext/slack_notifier.py --project=webapp
+      - wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url=$SLACK_URL --message=failure
     after_success:
-      - python ext/slack_notifier.py --project=webapp -s
+      - wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url=$SLACK_URL --message=success
     ```
 
 # License
