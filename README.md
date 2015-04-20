@@ -18,9 +18,9 @@ Simple Slack notifier for Shippable.
     
 ```
 after_failure:
-  - wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url $SLACK_URL --message failure
+  - sudo apt-get install wget -y; wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url $SLACK_URL --message failure
 after_success:
-  - wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url $SLACK_URL --message success
+  - sudo apt-get install wget -y; wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notifier.py --slack-url $SLACK_URL --message success
 ```
 
 # License
