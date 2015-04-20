@@ -59,7 +59,7 @@ def main():
   args = parser.parse_args(sys.argv[1:])
 
   connection = httplib.HTTPSConnection('hooks.slack.com')
-  post_message(connection, args.slack_url, args.message == "Success")
+  post_message(connection, args.slack_url, args.message == "success")
 
 if __name__ == '__main__':
   main()
