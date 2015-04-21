@@ -23,6 +23,37 @@ after_success:
   - sudo apt-get install wget -y; wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notify.py --slack-url $SLACK_URL --message success
 ```
 
+# Sample shippable.yml
+
+```
+language: node_js
+
+env:
+  global:
+    - secure: YLnGRwHdeDhzxuw123123213213621873872136782163781267836781263781232187398217398271983789217389212wRNJODyNYAXtxg2o2ndYWkETaDSpn6r7ZSpQCV7iQ9YJJHdJB3gPFNOC/rWaBLm0lYhq6NveNjJGeOxf9RClvzdYkVQzzOvyPj/flQtHjiMPonKeQ2/gUJvBVXvR/dPmn3sq1POXVjeRnYZ5WoPqFzH8rSj/B4pEVxWX4Se//ZGg2webmh9OuqSFN7uNW1xytvH3VRzcbBXMSHScSXzOyxvBLGjuuuDFc9s5qTwqa8idtPCa6ORWg==
+
+after_failure:
+  - sudo apt-get install wget -y; wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notify.py --slack-url $SLACK_URL --message failure
+after_success:
+  - sudo apt-get install wget -y; wget -O /tmp/notify.py http://mspanc.github.io/shippable-slack-notifier/notify.py; python /tmp/notify.py --slack-url $SLACK_URL --message success
+
+node_js:
+  - 0.10
+  - 0.12
+
+build_image: shippableimages/ubuntu1404_nodejs
+
+before_install:
+  - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+  - node --version
+
+install:
+  - npm install
+
+script:
+  - npm run spec
+```
+
 # License
 
 MIT
